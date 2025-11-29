@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assignment 2 - Pricing Table</title>
+  <style>
+    /* Assignment 2: Responsive Pricing Table
+       Features:
+       - Three plans (Basic, Pro, Enterprise)
+       - Highlighted recommended plan
+       - Responsive layout: 3 columns on desktop, stacked on mobile
+       - Hover effects on buttons
+    */
+
+    :root {
+      --bg: #f9f9f9;
+      --card-bg: #ffffff;
+      --primary: #1e73ff;
+      --primary-dark: #1558c9;
+      --shadow: 0 6px 16px rgba(0,0,0,0.12);
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .plan {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      text-align: center;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .plan:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+    }
+
+    .plan h2 {
+      margin: 0 0 10px;
+      font-size: 1.4rem;
+    }
+
+    .plan p {
+      font-size: 1.1rem;
+      margin: 0 0 16px;
+      color: #444;
+    }
+
+    .plan button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 160ms ease, transform 160ms ease;
+    }
+
+    .plan button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .recommended {
+      border: 2px solid var(--primary);
+      transform: scale(1.05);
+    }
+
+    .recommended h2 {
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+  <section class="pricing">
+    <div class="plan">
+      <h2>Basic</h2>
+      <p>299Rupees/month</p>
+      <button>Choose</button>
+    </div>
+    <div class="plan recommended">
+      <h2>Pro</h2>
+      <p>999Rupees/month</p>
+      <button>Choose</button>
+    </div>
+    <div class="plan">
+      <h2>Enterprise</h2>
+      <p>1999Rupees/month</p>
+      <button>Choose</button>
+    </div>
+  </section>
+</body>
+</html>
