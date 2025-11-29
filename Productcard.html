@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assignment 7 - Product Card</title>
+  <style>
+    /* Assignment 7: Product Card UI
+       Features:
+       - Product image, title, price, and button
+       - Hover lift effect with shadow
+       - Responsive stacking for narrow screens
+    */
+
+    :root {
+      --primary: #1e73ff;
+      --primary-dark: #1558c9;
+      --card-bg: #ffffff;
+      --shadow: 0 6px 16px rgba(0,0,0,0.12);
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f2f5;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      width: 92%;
+      max-width: 300px;
+      text-align: center;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-card h2 {
+      font-size: 1.2rem;
+      margin: 12px 0 6px;
+      color: #333;
+    }
+
+    .product-card p {
+      font-size: 1rem;
+      color: #555;
+      margin: 0 0 14px;
+    }
+
+    .product-card button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 16px;
+      transition: background 160ms ease, transform 160ms ease;
+    }
+
+    .product-card button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Responsive tweak */
+    @media (max-width: 400px) {
+      .product-card {
+        max-width: 90%;
+      }
+      .product-card img {
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="product-card">
+    <img src="https://i.pinimg.com/originals/a5/96/74/a5967436e9fe4e0555dce6c5fcdf1d0e.jpg" alt="Product Image">
+    <h2>Full Sleeve Tshirt </h2>
+    <p>999 Rupees</p>
+    <button>Add to Cart</button>
+  </div>
+</body>
+</html>
