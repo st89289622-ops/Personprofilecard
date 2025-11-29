@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assignment 10 - Blog Post Page</title>
+  <style>
+    /* Assignment 10: Blog Post Page
+       Features:
+       - Title, hero image, body text
+       - Sidebar with related posts
+       - Comfortable line length and typography
+       - Responsive layout (sidebar stacks below on mobile)
+    */
+
+    :root {
+      --primary: #1e73ff;
+      --bg: #f9f9f9;
+      --card-bg: #ffffff;
+      --shadow: 0 6px 16px rgba(0,0,0,0.12);
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      padding: 30px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Blog Content */
+    .blog-post {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .blog-post h1 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      color: var(--primary);
+    }
+
+    .blog-post img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+    }
+
+    .blog-post p {
+      margin-bottom: 16px;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      font-size: 1.4rem;
+      margin-bottom: 14px;
+      color: #333;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 12px;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .sidebar ul li a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 800px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Blog Post -->
+    <article class="blog-post">
+      <h1>Exploring the Future of Web Design</h1>
+      <img src="https://picsum.photos/800/400?random=10" alt="Hero Image">
+      <p>
+        Web design is evolving rapidly with new technologies and frameworks. Responsive layouts,
+        accessibility, and performance optimization are now essential parts of modern development.
+      </p>
+      <p>
+        Designers and developers are focusing on user experience, ensuring that websites are not only
+        visually appealing but also functional and inclusive. With tools like CSS Grid and Flexbox,
+        creating complex layouts has become easier and more efficient.
+      </p>
+      <p>
+        The future promises even more exciting innovations, from AI-driven design assistants to
+        immersive 3D experiences on the web.
+      </p>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Related Posts</h2>
+      <ul>
+        <li><a href="#">Top 10 CSS Tricks</a></li>
+        <li><a href="#">Getting Started with Flexbox</a></li>
+        <li><a href="#">Responsive Design Basics</a></li>
+        <li><a href="#">Accessibility in Web Development</a></li>
+      </ul>
+    </aside>
+  </div>
+</body>
+</html>
