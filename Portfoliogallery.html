@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assignment 4 - Portfolio Gallery</title>
+  <style>
+    /* Assignment 4: Portfolio Gallery
+       Features:
+       - Responsive CSS Grid layout
+       - 3 columns (desktop), 2 (tablet), 1 (mobile)
+       - Zoom-on-hover effect with transition
+    */
+
+    :root {
+      --gap: 16px;
+      --radius: 10px;
+      --shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: 1.8rem;
+      color: #333;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap);
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    /* Tablet view */
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Mobile view */
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>My Portfolio Gallery</h1>
+  <section class="gallery">
+    <div class="gallery-item">
+      <img src="https://picsum.photos/400/300?random=1" alt="Project 1">
+    </div>
+    <div class="gallery-item">
+      <img src="https://picsum.photos/400/300?random=2" alt="Project 2">
+    </div>
+    <div class="gallery-item">
+      <img src="https://picsum.photos/400/300?random=3" alt="Project 3">
+    </div>
+    <div class="gallery-item">
+      <img src="https://picsum.photos/400/300?random=4" alt="Project 4">
+    </div>
+    <div class="gallery-item">
+      <img src="https://picsum.photos/400/300?random=5" alt="Project 5">
+    </div>
+    <div class="gallery-item">
+      <img src="https://picsum.photos/400/300?random=6" alt="Project 6">
+    </div>
+  </section>
+</body>
+</html>
