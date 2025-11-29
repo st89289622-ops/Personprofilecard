@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assignment 6 - Animated Loader</title>
+  <style>
+    /* Assignment 6: Animated Loader
+       Features:
+       - Centered loader using Flexbox
+       - Smooth infinite animation with @keyframes
+       - Responsive design
+    */
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f2f5;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 6px solid #ccc;
+      border-top: 6px solid #1e73ff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Smaller screens tweak */
+    @media (max-width: 500px) {
+      .loader {
+        width: 40px;
+        height: 40px;
+        border-width: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader" aria-label="Loading"></div>
+</body>
+</html>
